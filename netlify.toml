@@ -1,0 +1,11 @@
+[build]
+  publish = "dist"
+  command = "npm install --include=dev && npm run build"
+
+[build.environment]
+  NPM_FLAGS = "--production=false"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
