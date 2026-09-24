@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -637,4 +638,644 @@
   <script type="module" src="./app.js"></script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreya Gupta | AI/ML Developer</title>
+  <meta name="description"
+    content="Interactive 3D portfolio of Shreya Gupta — MCA Student at DAVV Indore, Python Developer Intern at ZypherSec. Explore projects in Machine Learning, AI, and Web." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+  <!-- Google Fonts: Space Grotesk + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <!-- ========== SCROLL PROGRESS ========== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ========== PARTICLE CANVAS ========== -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== CURSOR FOLLOWER ========== -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <span class="loader-text">SHREYA</span>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header id="main-header">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo">
+        <div class="logo-box">
+          <img src="/logofront.png" onerror="this.onerror=null;this.src='./logofront.png'" alt="Shreya Gupta Logo"
+            class="logo-img" />
+          <div class="logo-pulse"></div>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Shreya_Gupta<span class="brand-dot">.</span></span>
+          <span class="brand-sub">Python_Developer</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" id="desktop-nav">
+        <a href="#home" class="nav-link active" data-section="home">Home</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+        <a href="#education" class="nav-link" data-section="education">Education</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://drive.google.com/file/d/1kK7hteSs2kNSust8QCBa1I62gCKj7nfe/view?usp=drive_link" target="_blank"
+          rel="noreferrer" class="btn-outline btn-sm">
+          <i data-lucide="download"></i> Resume
+        </a>
+        <button id="mobile-toggle" aria-label="Toggle menu">
+          <span class="hamburger">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#education" class="mobile-link">Education</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="https://drive.google.com/file/d/1kK7hteSs2kNSust8QCBa1I62gCKj7nfe/view?usp=drive_link" target="_blank"
+        rel="noreferrer" class="btn-glow mobile-cta">
+        <i data-lucide="download"></i> Download Resume
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+
+    <!-- ===== 1. HERO ===== -->
+    <section id="home" class="hero">
+      <!-- Animated mesh gradient blobs -->
+      <div class="hero-blobs" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+
+      <div class="container hero-layout">
+        <!-- Left: Text -->
+        <div class="hero-text">
+          <div class="hero-badge" data-anim="fade-down">
+            <span class="pulse-dot"></span>
+            <span>Python Developer Intern @ ZypherSec</span>
+          </div>
+
+          <h1 class="hero-heading" data-anim="fade-up">
+            <span class="line line-sm">Hi, I'm</span>
+            <span class="name-3d-wrap" id="name-3d">
+              <span class="char" style="--d:0">S</span><span class="char" style="--d:1">H</span><span class="char"
+                style="--d:2">R</span><span class="char" style="--d:3">E</span><span class="char"
+                style="--d:4">Y</span><span class="char" style="--d:5">A</span>
+            </span>
+          </h1>
+
+          <div class="hero-role" data-anim="fade-up">
+            <span class="role-label">I build</span>
+            <span class="role-typed" id="role-typed"></span>
+            <span class="caret"></span>
+          </div>
+
+          <p class="hero-desc" data-anim="fade-up">
+            MCA student at DAVV Indore crafting intelligent software with Python, Machine Learning, and modern web
+            technologies.
+            Currently interning at ZypherSec &amp; upskilling in Generative AI.
+          </p>
+
+          <div class="hero-cta" data-anim="fade-up">
+            <a href="#projects" class="btn-glow">
+              Explore Projects <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn-outline">
+              <i data-lucide="mail"></i> Say Hello
+            </a>
+          </div>
+
+          <div class="hero-stack" data-anim="fade-up">
+            <span class="stack-label"><i data-lucide="layers"></i></span>
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag tag-cyan">Machine Learning</span>
+            <span class="stack-tag tag-pink">GenAI</span>
+            <span class="stack-tag tag-amber">DSA</span>
+            <span class="stack-tag tag-green">Web</span>
+          </div>
+        </div>
+
+        <!-- Right: Realistic 3D Model Stage Showcase with 360 Rotation -->
+        <div class="hero-visual" data-anim="fade-left">
+          <div class="turntable-container" id="turntable-container">
+            <div class="model-stage-card glass-card 3d-rotator" id="stage-rotator">
+              <div class="stage-backdrop">
+                <div class="stage-light-ring"></div>
+                <div class="stage-spotlight"></div>
+              </div>
+
+              <div class="model-wrapper">
+                <img src="/Shreya_Front.png" onerror="this.onerror=null;this.src='./Shreya_Front.png'"
+                  alt="Shreya Gupta — Professional Showcase" class="fullbody-model-img" draggable="false"
+                  loading="eager" />
+                <div class="model-shadow"></div>
+              </div>
+
+              <!-- Skill highlights badges orbiting the model -->
+              <div class="skill-highlight badge-python">
+                <i data-lucide="code-2"></i> Python Developer
+              </div>
+              <div class="skill-highlight badge-ml">
+                <i data-lucide="cpu"></i> ML &amp; Data Science
+              </div>
+              <div class="skill-highlight badge-ai">
+                <i data-lucide="sparkles"></i> GenAI Upskilling
+              </div>
+              <div class="skill-highlight badge-mca">
+                <i data-lucide="graduation-cap"></i> MCA @ DAVV
+              </div>
+            </div>
+          </div>
+          <p class="stage-hint" id="stage-hint"><i data-lucide="rotate-3d"></i> Tap: Start / Stop 360° | Drag: Rotate
+          </p>
+
+          <!-- Floating stat chips -->
+          <div class="float-chip chip-1"><span>3+</span> Projects</div>
+          <div class="float-chip chip-2"><span>3</span> Certs</div>
+          <div class="float-chip chip-3"><span>7.97</span> CGPA</div>
+        </div>
+      </div>
+
+      <div class="scroll-cue">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== 2. ABOUT ===== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-tag" data-anim="fade-up">
+          <span class="tag-line"></span> About Me <span class="tag-line"></span>
+        </div>
+        <h2 class="section-heading" data-anim="fade-up">
+          Passionate Developer<br />Building with <span class="gradient-text">AI &amp; Code</span>
+        </h2>
+
+        <div class="about-grid">
+          <!-- Objective -->
+          <div class="glass-card card-wide" data-anim="fade-up" data-tilt>
+            <div class="card-stripe stripe-blue"></div>
+            <div class="card-icon"><i data-lucide="target"></i></div>
+            <h3>Career Objective</h3>
+            <p>Motivated MCA student with hands-on experience in Frontend Development and Machine Learning.
+              Strong foundation in DSA and analytical problem-solving.
+              Seeking an entry-level software development role to apply technical skills and grow.</p>
+            <div class="card-tag tag-green"><i data-lucide="check-circle-2"></i> Open for Full-Time Roles</div>
+          </div>
+
+          <!-- Internship -->
+          <div class="glass-card" data-anim="fade-up" data-tilt>
+            <div class="card-stripe stripe-purple"></div>
+            <div class="card-icon icon-purple"><i data-lucide="briefcase"></i></div>
+            <h3>Python Dev Intern</h3>
+            <span class="card-sub">ZypherSec · Jul 2026 – Present</span>
+            <ul class="card-list">
+              <li>Backend Python scripts &amp; dev utilities</li>
+              <li>Agile team, clean modular code</li>
+              <li>OOP &amp; algorithm design</li>
+            </ul>
+            <div class="card-tag tag-purple"><i data-lucide="award"></i> Verified Intern</div>
+          </div>
+
+          <!-- GenAI -->
+          <div class="glass-card" data-anim="fade-up" data-tilt>
+            <div class="card-stripe stripe-cyan"></div>
+            <div class="card-icon icon-cyan"><i data-lucide="sparkles"></i></div>
+            <h3>Generative AI &amp; LLMs</h3>
+            <span class="card-sub">Code Sikha · Active Upskilling</span>
+            <ul class="card-list">
+              <li>LLMs &amp; Prompt Engineering</li>
+              <li>Hands-on capstone projects</li>
+              <li>Modern AI solutions</li>
+            </ul>
+            <div class="card-tag tag-cyan"><i data-lucide="zap"></i> Capstone Projects</div>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="skills-block" data-anim="fade-up">
+          <h3 class="skills-heading">Technical Arsenal</h3>
+          <div class="skills-row">
+            <div class="skill-group glass-card" data-tilt>
+              <h4><i data-lucide="code-2"></i> Languages</h4>
+              <div class="bars">
+                <div class="bar-item"><span>Python</span>
+                  <div class="bar">
+                    <div class="bar-fill" data-w="92"></div>
+                  </div><span class="bar-pct">92%</span>
+                </div>
+                <div class="bar-item"><span>JavaScript</span>
+                  <div class="bar">
+                    <div class="bar-fill" data-w="78"></div>
+                  </div><span class="bar-pct">78%</span>
+                </div>
+                <div class="bar-item"><span>SQL</span>
+                  <div class="bar">
+                    <div class="bar-fill" data-w="84"></div>
+                  </div><span class="bar-pct">84%</span>
+                </div>
+                <div class="bar-item"><span>HTML/CSS</span>
+                  <div class="bar">
+                    <div class="bar-fill" data-w="88"></div>
+                  </div><span class="bar-pct">88%</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-group glass-card" data-tilt>
+              <h4><i data-lucide="cpu"></i> AI / ML</h4>
+              <div class="bars">
+                <div class="bar-item"><span>Machine Learning</span>
+                  <div class="bar">
+                    <div class="bar-fill cyan" data-w="82"></div>
+                  </div><span class="bar-pct">82%</span>
+                </div>
+                <div class="bar-item"><span>Scikit-Learn</span>
+                  <div class="bar">
+                    <div class="bar-fill cyan" data-w="76"></div>
+                  </div><span class="bar-pct">76%</span>
+                </div>
+                <div class="bar-item"><span>Pandas / NumPy</span>
+                  <div class="bar">
+                    <div class="bar-fill cyan" data-w="84"></div>
+                  </div><span class="bar-pct">84%</span>
+                </div>
+                <div class="bar-item"><span>Prompt Eng.</span>
+                  <div class="bar">
+                    <div class="bar-fill cyan" data-w="72"></div>
+                  </div><span class="bar-pct">72%</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-group glass-card" data-tilt>
+              <h4><i data-lucide="wrench"></i> Tools</h4>
+              <div class="tool-cloud">
+                <span>Tkinter</span><span>SQLite</span><span>Django</span>
+                <span>Git</span><span>VS Code</span><span>SpeechRecognition</span>
+                <span>pyttsx3</span><span>Matplotlib</span><span>OOP</span><span>DSA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. EDUCATION ===== -->
+    <section id="education" class="section section-alt">
+      <div class="container">
+        <div class="section-tag" data-anim="fade-up">
+          <span class="tag-line"></span> Education <span class="tag-line"></span>
+        </div>
+        <h2 class="section-heading" data-anim="fade-up">
+          Academic <span class="gradient-text">Journey</span>
+        </h2>
+
+        <div class="timeline">
+          <!-- MCA -->
+          <div class="timeline-item" data-anim="fade-right">
+            <div class="tl-dot"></div>
+            <div class="glass-card tl-card" data-tilt>
+              <div class="tl-header">
+                <div>
+                  <h3>Master of Computer Applications (MCA)</h3>
+                  <span class="tl-inst"><i data-lucide="graduation-cap"></i> DAVV — Indore, MP</span>
+                </div>
+                <div class="tl-meta">
+                  <span class="badge badge-cyan"><i data-lucide="calendar"></i> 2025 – 2027</span>
+                  <span class="grade-chip active">Pursuing</span>
+                </div>
+              </div>
+              <div class="tl-courses">
+                <span><i data-lucide="check"></i> Advanced Software Engineering</span>
+                <span><i data-lucide="check"></i> Data Structures &amp; Algorithms</span>
+                <span><i data-lucide="check"></i> Machine Learning</span>
+                <span><i data-lucide="check"></i> Database Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- B.Sc. -->
+          <div class="timeline-item" data-anim="fade-right">
+            <div class="tl-dot"></div>
+            <div class="glass-card tl-card" data-tilt>
+              <div class="tl-header">
+                <div>
+                  <h3>B.Sc. Computer Science</h3>
+                  <span class="tl-inst"><i data-lucide="graduation-cap"></i> S.B.N. Govt. P.G. College — Barwani,
+                    MP</span>
+                </div>
+                <div class="tl-meta">
+                  <span class="badge badge-green"><i data-lucide="calendar"></i> 2022 – 2025</span>
+                  <span class="grade-chip success">CGPA 7.97</span>
+                </div>
+              </div>
+              <div class="tl-courses">
+                <span><i data-lucide="check"></i> Object-Oriented Programming</span>
+                <span><i data-lucide="check"></i> DBMS &amp; SQL</span>
+                <span><i data-lucide="check"></i> Web Development</span>
+                <span><i data-lucide="check"></i> OS &amp; Networks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <h3 class="gallery-heading" data-anim="fade-up" style="margin-top: 3rem;">Certifications</h3>
+        <div class="certs-row">
+          <div class="cert-card glass-card" data-anim="fade-up" data-tilt>
+            <div class="cert-icon icon-green"><i data-lucide="award"></i></div>
+            <h4>AI &amp; Machine Learning</h4>
+            <span class="cert-from">FIIT Foundation (IIT Delhi)</span>
+            <span class="cert-year">2025 · <i data-lucide="shield-check"></i> Verified</span>
+            <a href="https://drive.google.com/file/d/1odNqBbIV5zYqQBucJVH2fJCdXY2LD7fE/preview" target="_blank"
+              rel="noreferrer" class="btn-outline btn-sm btn-full"><i data-lucide="external-link"></i> View</a>
+          </div>
+          <div class="cert-card glass-card" data-anim="fade-up" data-tilt>
+            <div class="cert-icon icon-cyan"><i data-lucide="award"></i></div>
+            <h4>Frontend Web Dev</h4>
+            <span class="cert-from">SSI Digital Institution</span>
+            <span class="cert-year">2023 · <i data-lucide="shield-check"></i> Verified</span>
+            <a href="https://drive.google.com/file/d/1JHOgy2-cL8gOr6JvE4HsKEglcl4_gQrc/preview" target="_blank"
+              rel="noreferrer" class="btn-outline btn-sm btn-full"><i data-lucide="external-link"></i> View</a>
+          </div>
+          <div class="cert-card glass-card" data-anim="fade-up" data-tilt>
+            <div class="cert-icon icon-purple"><i data-lucide="award"></i></div>
+            <h4>Python Development</h4>
+            <span class="cert-from">Yhills Edutech</span>
+            <span class="cert-year">2024 · <i data-lucide="shield-check"></i> Verified</span>
+            <a href="https://drive.google.com/file/d/1jiat_nUMvWxO-fmHkHk5JIzvHo33_U_5/preview" target="_blank"
+              rel="noreferrer" class="btn-outline btn-sm btn-full"><i data-lucide="external-link"></i> View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. PROJECTS ===== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-tag" data-anim="fade-up">
+          <span class="tag-line"></span> Projects <span class="tag-line"></span>
+        </div>
+        <h2 class="section-heading" data-anim="fade-up">
+          Featured <span class="gradient-text">Work</span>
+        </h2>
+
+        <div class="projects-masonry">
+
+          <!-- Project 1: Hotel Management -->
+          <div class="project-card glass-card" data-anim="fade-up" data-tilt>
+            <div class="p-glow glow-blue"></div>
+            <div class="p-header">
+              <div class="p-icon icon-blue"><i data-lucide="hotel"></i></div>
+              <span class="badge">Python Desktop</span>
+            </div>
+            <!-- Animated Preview -->
+            <div class="p-preview preview-hotel">
+              <div class="terminal-mock">
+                <div class="term-bar"><span></span><span></span><span></span></div>
+                <div class="term-body">
+                  <span class="term-line tl-1">$ python hotel_manager.py</span>
+                  <span class="term-line tl-2">&gt; Welcome to Hotel System</span>
+                  <span class="term-line tl-3">&gt; Room 101 — Booked ✓</span>
+                  <span class="term-line tl-4">&gt; Invoice generated ✓</span>
+                </div>
+              </div>
+            </div>
+            <h3>Hotel Management System</h3>
+            <p>Full OOP desktop app with Tkinter GUI &amp; SQLite. Customer check-in/out, room allocation, automated
+              billing.</p>
+            <div class="p-tags"><span>Python</span><span>Tkinter</span><span>SQLite</span><span>OOP</span></div>
+            <a href="https://github.com/Shreyagupta05/MyProject" target="_blank" rel="noreferrer"
+              class="btn-glow btn-full">
+              <i data-lucide="github"></i> View on GitHub
+            </a>
+          </div>
+
+          <!-- Project 2: Shreya Voice Assistant (featured) -->
+          <div class="project-card glass-card featured" data-anim="fade-up" data-tilt>
+            <div class="p-glow glow-purple"></div>
+            <div class="p-header">
+              <div class="p-icon icon-purple"><i data-lucide="bot"></i></div>
+              <span class="badge badge-purple">AI Voice Bot</span>
+              <span class="featured-tag">★ Featured</span>
+            </div>
+            <!-- Voice Bot Animated Avatar -->
+            <div class="voice-avatar">
+              <div class="va-ring r1"></div>
+              <div class="va-ring r2"></div>
+              <div class="va-ring r3"></div>
+              <div class="va-core"><i data-lucide="mic"></i></div>
+              <div class="va-waveform">
+                <span style="--h:.4"></span><span style="--h:.7"></span><span style="--h:1"></span>
+                <span style="--h:.5"></span><span style="--h:.9"></span><span style="--h:.3"></span>
+                <span style="--h:.8"></span><span style="--h:.6"></span><span style="--h:.95"></span>
+              </div>
+            </div>
+            <h3>Shreya Voice Assistant</h3>
+            <p>Voice-activated AI assistant with speech recognition &amp; TTS. System tasks, web search, app control,
+              scheduled announcements.</p>
+            <div class="p-tags">
+              <span>Python</span><span>SpeechRecognition</span><span>pyttsx3</span><span>Automation</span>
+            </div>
+            <a href="https://github.com/Shreyagupta05/shreya_assistant" target="_blank" rel="noreferrer"
+              class="btn-glow btn-full btn-purple">
+              <i data-lucide="github"></i> View on GitHub
+            </a>
+          </div>
+
+          <!-- Project 3: Car Price Prediction -->
+          <div class="project-card glass-card" data-anim="fade-up" data-tilt>
+            <div class="p-glow glow-green"></div>
+            <div class="p-header">
+              <div class="p-icon icon-green"><i data-lucide="car"></i></div>
+              <span class="badge badge-green">Machine Learning</span>
+            </div>
+            <div class="p-preview preview-ml">
+              <div class="ml-chart">
+                <div class="ml-bar" style="--h:40%"></div>
+                <div class="ml-bar" style="--h:65%"></div>
+                <div class="ml-bar" style="--h:85%"></div>
+                <div class="ml-bar" style="--h:55%"></div>
+                <div class="ml-bar" style="--h:92%"></div>
+                <div class="ml-bar" style="--h:70%"></div>
+              </div>
+              <span class="ml-label">R² = 0.89</span>
+            </div>
+            <h3>Car Price Prediction</h3>
+            <p>ML regression pipeline predicting car prices from brand, mileage, age &amp; fuel. Evaluated with R², MAE,
+              RMSE.</p>
+            <div class="p-tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-Learn</span></div>
+            <a href="https://github.com/Shreyagupta05/CarPricePrediction" target="_blank" rel="noreferrer"
+              class="btn-glow btn-full btn-green">
+              <i data-lucide="github"></i> View on GitHub
+            </a>
+          </div>
+
+          <!-- Project 4: This Portfolio -->
+          <div class="project-card glass-card" data-anim="fade-up" data-tilt>
+            <div class="p-glow glow-amber"></div>
+            <div class="p-header">
+              <div class="p-icon icon-amber"><i data-lucide="layout"></i></div>
+              <span class="badge badge-amber">Web App</span>
+            </div>
+            <h3>3D Interactive Portfolio</h3>
+            <p>This very portfolio — dark glassmorphism, canvas particles, 3D rotating cube, scroll-driven animations,
+              neon design.</p>
+            <div class="p-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Canvas</span></div>
+            <a href="https://github.com/Shreyagupta05/Shreya_Portfolio" target="_blank" rel="noreferrer"
+              class="btn-glow btn-full btn-amber">
+              <i data-lucide="github"></i> View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. CONTACT ===== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-tag" data-anim="fade-up">
+          <span class="tag-line"></span> Contact <span class="tag-line"></span>
+        </div>
+        <h2 class="section-heading" data-anim="fade-up">
+          Let's <span class="gradient-text">Connect</span>
+        </h2>
+
+        <div class="contact-layout">
+          <!-- Info -->
+          <div class="contact-info glass-card" data-anim="fade-right" data-tilt>
+            <h3>Let's build something <span class="gradient-text">amazing</span> together.</h3>
+            <p>Open for entry-level Software Developer, Python Engineer, and Frontend Developer roles.</p>
+
+            <div class="info-rows">
+              <div class="info-row">
+                <div class="info-icon glow-icon"><i data-lucide="mail"></i></div>
+                <div><span class="info-label">Email</span><a href="mailto:guptashreya2305@gmail.com"
+                    class="info-val">guptashreya2305@gmail.com</a></div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-icon glow-icon"><i data-lucide="phone"></i></div>
+                <div><span class="info-label">Phone</span><span class="info-val">+91 9669184602</span></div>
+              </div>
+              <div class="info-row">
+                <div class="info-icon glow-icon"><i data-lucide="map-pin"></i></div>
+                <div><span class="info-label">Location</span><span class="info-val">Indore, MP, India</span></div>
+              </div>
+            </div>
+
+            <div class="social-row">
+              <a href="https://github.com/Shreyagupta05" target="_blank" rel="noreferrer" class="social-chip"
+                title="GitHub">
+                <i data-lucide="github"></i><span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/shreya-gupta05" target="_blank" rel="noreferrer" class="social-chip"
+                title="LinkedIn">
+                <i data-lucide="linkedin"></i><span>LinkedIn</span>
+              </a>
+              <a href="https://leetcode.com/u/guptashreya2305" target="_blank" rel="noreferrer" class="social-chip"
+                title="LeetCode">
+                <i data-lucide="code-2"></i><span>LeetCode</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="contact-form glass-card" data-anim="fade-left" data-tilt>
+            <form id="contact-form" novalidate>
+              <div class="field">
+                <label for="c-name">Name</label>
+                <input type="text" id="c-name" name="name" placeholder="Jane Doe" required autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="c-email">Email</label>
+                <input type="email" id="c-email" name="email" placeholder="jane@example.com" required
+                  autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="c-subject">Subject</label>
+                <input type="text" id="c-subject" name="subject" placeholder="Collaboration" />
+              </div>
+              <div class="field">
+                <label for="c-message">Message</label>
+                <textarea id="c-message" name="message" rows="5" placeholder="Write your message..."
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn-glow btn-full" id="send-btn">
+                <i data-lucide="send"></i> <span>Send Message</span>
+              </button>
+            </form>
+            <div id="form-status" class="form-status"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="f-left">
+        <span class="f-brand">Shreya<span class="brand-dot">.</span></span>
+      </div>
+      <div class="f-links">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a>
+        <a href="https://drive.google.com/file/d/1kK7hteSs2kNSust8QCBa1I62gCKj7nfe/view?usp=drive_link" target="_blank"
+          rel="noreferrer">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="btt" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+
+  <!-- Init Lucide -->
+  <script>if (window.lucide) lucide.createIcons();</script>
+  <!-- Main JS -->
+  <script type="module" src="./app.js"></script>
+</body>
+
+>>>>>>> 7240db5 (Updated img)
 </html>
