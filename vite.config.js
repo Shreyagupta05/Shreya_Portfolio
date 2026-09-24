@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  base: './',
-  server: {
-    port: 5173,
-    open: true
-  }
-});
-=======
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import fs from 'node:fs';
@@ -43,4 +29,3 @@ export default defineConfig({
     open: true
   }
 });
->>>>>>> 7240db5 (Updated img)
